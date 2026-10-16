@@ -1,0 +1,27 @@
+# Coins the daily briefing covers
+watchlist:
+  - BTC-USD
+  - ETH-USD
+
+# Hard limits, enforced in code before any order is sent (paper or live)
+limits:
+  max_order_usd: 25
+  daily_cap_usd: 100
+  allowed_products:
+    - BTC-USD
+    - ETH-USD
+
+paper:
+  starting_usd: 1000
+  fee_pct: 1.2  # simulated taker fee; adjust to your Coinbase fee tier
+
+strategies:
+  ma_crossover:
+    fast: 20
+    slow: 50
+    granularity: ONE_HOUR
+  rsi_threshold:
+    period: 14
+    oversold: 30
+    overbought: 70
+    granularity: ONE_HOUR
